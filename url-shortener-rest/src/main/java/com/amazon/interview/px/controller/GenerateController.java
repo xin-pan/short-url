@@ -2,6 +2,7 @@ package com.amazon.interview.px.controller;
 
 import com.amazon.interview.px.manager.ShortUrlManager;
 import com.amazon.interview.px.request.GenerateShortUrlRequest;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ public class GenerateController {
 
     @PostMapping("/generateShortUrl")
     @ResponseBody
+    @ApiOperation(value = "Generate short url for the long url accordingly.", response = String.class)
     public ResponseEntity<String> generateShortUrl(@RequestBody @Valid GenerateShortUrlRequest request) {
         if(!shortUrlManager.isValidUrl(request.getUrl())){
             log.error("无效的url:[{}]",request.getUrl());
