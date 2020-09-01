@@ -1,0 +1,11 @@
+
+# bin folder
+build/
+
+# eclipse
+.classpath
+.project
+.settings/
+
+# IDEA
+**/.idea
