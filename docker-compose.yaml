@@ -1,0 +1,20 @@
+version: '3'
+services:
+  url-shortener-rest:
+    image: seanpan/shorten-url-rest
+    environment:
+      domain: http://localhost/api/r/
+      spring.datasource.url: jdbc:mysql://docker.for.mac.host.internal:3306/short_url?useUnicode=true&characterEncoding=utf-8
+      spring.datasource.password: asdfdf
+    deploy:
+      mode: global
+  url-shortener-web:
+    image: seanpan/shorten-url-web
+    ports:
+    - 80:8080
+    depends_on:
+    - url-shortener-rest
+    deploy:
+      mode: global
+
+
