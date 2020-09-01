@@ -1,6 +1,8 @@
 
-# bin folder
+# folder
 build/
+target
+log
 
 # eclipse
 .classpath
@@ -9,3 +11,7 @@ build/
 
 # IDEA
 **/.idea
+*.iml
+
+# mac
+.DS_Store
