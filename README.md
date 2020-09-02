@@ -9,6 +9,7 @@
 1. Configure [docker-compose.yaml]() to make sure the following 2 fields are correct:  
     1. spring.datasource.url
     1. spring.datasource.password
+    1. domain
 1. Start application
 
         ```
